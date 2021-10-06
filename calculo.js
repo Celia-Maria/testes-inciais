@@ -15,10 +15,15 @@ for (let i = 0; i < Cart.items.length; i++) {
 
 // 1. calcular a quantidade de produtos no objeto cart.
 let qtd = Cart.items.reduce((acc, current) => acc + current.quantity, 0)
+
 console.log('Quantidade Total Comprada:', qtd)
 
 // 2. somar o valor total do cart.
+let converteMoeda = value =>
+  Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(
+    value
+  )
 let valorTotal = Cart.items
   .map(item => item.quantity * item.price)
   .reduce((acc, current) => acc + current, 0)
-console.log('Valor Total R$:', valorTotal)
+console.log(`Valor Total R$: ${converteMoeda(valorTotal / 100)}`)
