@@ -29,6 +29,8 @@ header {
   width: 100%;
 }
 
+/* Menu */
+
 .navbar-content img {
   width: 120px;
 }
@@ -140,6 +142,7 @@ header {
 #menu-toggle input:checked ~ ul {
   transform: none;
 }
+
 .grey-container {
   background-color: hsla(0, 0%, 97%, 1);
   padding-top: 30px;
@@ -149,7 +152,6 @@ header {
 .centralize-container {
   width: 80%;
   margin: 0 auto;
-  border: 1px solid blue;
 }
 
 /* Section Header */
@@ -202,6 +204,10 @@ header {
 }
 
 /*Section Services */
+
+.flexbox-services {
+  display: grid;
+}
 
 .img-services {
   display: flex;
@@ -392,7 +398,6 @@ header {
 .img-cursos {
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 1px solid orange;
 }
 
 .img-cursos img {
@@ -446,11 +451,6 @@ header {
   width: 100%;
 }
 
-/*.class-desc {
-  padding-left: 50px;
-  padding-right: 30px;
-}*/
-
 .txt-video h4 {
   font: 700 18px 'Ubuntu', sans-serif;
   color: hsla(340, 100%, 63%, 1);
@@ -471,6 +471,7 @@ header {
 }
 
 /*Section Blog */
+
 .flexbox-blog {
   display: grid;
 }
@@ -505,7 +506,7 @@ header {
 
 .gallery {
   width: 100%;
-  /*padding: 10px;*/
+  padding: 10px;
 }
 
 .gallery img {
@@ -518,15 +519,12 @@ header {
   margin-top: 10px;
   margin-bottom: 19px;
   text-align: center;
-  border: 1px solid blue;
 }
 
 .gallery p {
   font: 300 13px 'Ubuntu', sans-serif;
   color: hsla(0, 0%, 0%, 1);
   margin-bottom: 5px;
-
-  border: 1px solid rosybrown;
 }
 
 /*Section Post */
@@ -546,11 +544,12 @@ header {
   margin-bottom: 70px;
 }
 
-.center-info {
+.center-info > div {
   width: 100%;
   height: 465px;
-  background-color: hsla(0, 0%, 77%, 1);
   margin-bottom: 60px;
+  background-size: cover;
+  background-image: url(./img/cifrao.jpg);
 }
 .post-text {
   margin-bottom: 100px;
@@ -621,8 +620,91 @@ header {
   margin-bottom: 60px;
 }
 
-.post-cont {
-  padding-bottom: 200px;
+/*Section Contato*/
+
+.forms {
+  padding-top: 5px;
+  display: grid;
+}
+
+#formulario {
+  flex: 1;
+}
+
+#formulario legend {
+  padding-bottom: 10%;
+  font-size: 36px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #ff4081;
+}
+
+form {
+  width: 100%;
+  display: grid;
+  padding: 10px 80px 80px;
+  justify-items: stretch;
+  align-content: center;
+}
+
+input[type='text'] {
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid #686868;
+  text-align: left;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+input[class='text'] {
+  width: 100%;
+  height: 200px;
+  border-radius: 7px;
+  border: 1px solid #686868;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+input[type='submit'] {
+  width: 108px;
+  height: 32px;
+  border-radius: 20px;
+  background-color: #ff4081;
+  color: #fff;
+  text-emphasis-style: 10px;
+}
+
+input[type='submit']:hover {
+  color: #37e7;
+  background-color: #fff;
+}
+
+.img-content {
+  padding-top: 5px;
+  padding-bottom: 5%;
+  width: 100%;
+  height: auto;
+}
+
+.img-content img {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.campo_nome {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #686868;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+
+.msg {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #686868;
+  box-sizing: border-box;
+  border-radius: 7px;
 }
 
 /*Section Footer */
@@ -676,18 +758,13 @@ footer {
 }
 
 @media screen and (max-width: 767px) {
-  body {
-    /*background-color: coral;*/
-  }
+  /*body {
+    background-color: coral;
+  }*/
+
+  /*Menu*/
   #desktop-main {
     display: none;
-  }
-  .flexbox-gallery {
-    display: grid;
-  }
-
-  .flexbox-curso {
-    display: grid;
   }
 }
 
@@ -695,11 +772,12 @@ footer {
   /*body {
     background-color: cornflowerblue;
   }*/
-
+  /*Menu*/
   #mobile-main {
     display: none;
   }
 
+  /* Section Header */
   .flexbox-header {
     display: flex;
   }
@@ -711,10 +789,12 @@ footer {
     margin-bottom: 20px;
   }
 
+  /*Section Services */
   .flexbox-services {
     display: flex;
   }
 
+  /*Section Testimonials */
   .flexbox-testimonials {
     display: flex;
     flex-wrap: wrap;
@@ -733,10 +813,7 @@ footer {
     margin-bottom: 60px;
   }
 
-  .flexbox-post-service {
-    display: flex;
-  }
-
+  /*Section Cursos */
   .flexbox-cursos {
     display: flex;
   }
@@ -755,6 +832,7 @@ footer {
     flex: 1;
   }
 
+  /*Section Curso */
   .flexbox-curso {
     display: flex;
   }
@@ -779,6 +857,8 @@ footer {
     gap: 30px;
     margin-bottom: 50px;
   }
+
+  /*Section Blog */
 
   .flexbox-blog {
     display: flex;
@@ -808,6 +888,28 @@ footer {
 
   .gallery {
     width: 50%;
+  }
+
+  /*Section Post */
+  .flexbox-post-service {
+    display: flex;
+  }
+
+  /*Section Contato*/
+
+  .forms {
+    padding-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .img-content {
+    width: 100%;
+    flex: 1;
+  }
+
+  .img-content img {
+    width: 100%;
   }
 }
 
@@ -815,9 +917,13 @@ footer {
   /* body {
     background-color: rgb(123, 216, 120);
   }*/
+
+  /*Menu*/
   #mobile-main {
     display: none;
   }
+
+  /* Section Header */
   .flexbox-header {
     display: flex;
   }
@@ -828,6 +934,8 @@ footer {
     width: 100%;
     margin-bottom: 20px;
   }
+
+  /*Section Services */
 
   .flexbox-services {
     display: flex;
@@ -851,10 +959,7 @@ footer {
     margin-bottom: 60px;
   }
 
-  .flexbox-post-service {
-    display: flex;
-  }
-
+  /*Section Cursos */
   .flexbox-cursos {
     display: flex;
   }
@@ -873,6 +978,7 @@ footer {
     flex: 1;
   }
 
+  /*Section Curso */
   .flexbox-curso {
     display: flex;
   }
@@ -897,6 +1003,8 @@ footer {
     gap: 30px;
     margin-bottom: 50px;
   }
+
+  /*Section Blog */
 
   .flexbox-blog {
     display: flex;
@@ -925,5 +1033,26 @@ footer {
 
   .gallery {
     width: 50%;
+  }
+
+  /*Section Post */
+  .flexbox-post-service {
+    display: flex;
+  }
+
+  /*Section Contato*/
+  .forms {
+    padding-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .img-content {
+    width: 100%;
+    flex: 1;
+  }
+
+  .img-content img {
+    width: 100%;
   }
 }
